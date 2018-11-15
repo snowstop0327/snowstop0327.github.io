@@ -13,13 +13,17 @@
 
 
 // navbar-toggle-button
+jQuery(document).ready(function() {
+	$('#navbarBurger').click(function (event) {
+		$(this).toggleClass('close');
+		$('.navbar-menu').toggleClass('is-active');
+	});
+	$('.top-nav > li').click(function(event) {
+		$('.navbar-menu').removeClass('is-active');
+		$('#navbarBurger').removeClass('close');
+	});
+});
 
-// $('.navbar-toggler').click(function (event) {
-//   /* Act on the event */
-//   $(this).toggleClass('icon-android-close');
-//   // $('.header-fixed').toggleClass('is-sticky');
-//   $('.navbar-end').toggleClass('open');
-// });
 
 
 // 平滑捲動毛點

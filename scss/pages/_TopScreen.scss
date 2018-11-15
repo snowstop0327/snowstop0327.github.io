@@ -63,7 +63,12 @@ $top-card-padding: 20px;
 		background-position: center center;
 		background-attachment: fixed;
 	}
-
+	@include tablet-only {
+		width: 40%;
+		.brand-slogan {
+			display: none;
+		}
+	}
 	@include mobile {
 		width: auto;
 		height: $top-banner-height;

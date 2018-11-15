@@ -187,6 +187,14 @@ section {
 
 .navbar {
 	transition: 0.5s transform ease-in-out;
+
+	.navbar-brand {
+		align-items: center;
+		a , img {
+			height: 35px;
+			display: block;
+		}
+	} 
 	// visibility: hidden;
 	@include tablet {
 		.navbar-brand {
@@ -201,6 +209,59 @@ section {
 			img {
 				height: auto;
 			}
+		}
+	}
+}
+$burger-bg-color: $primary;
+%burger-line {
+	display: block;
+	position: absolute;
+	height: 4px;
+	border-radius: 999rem;
+	background-color: $primary;
+	left: 12px;
+	opacity: 1;
+	transform: rotate(0deg);
+	transition: .25s ease-in-out;
+}
+.navbar-burger {
+	&:hover {
+		background-color: transparent;
+	}
+	&:before {
+		content: "";
+		width: 30%;
+		top: calc(50% - 14px);
+		@extend %burger-line;
+	}
+	span {
+		width: 60%;
+		top: calc(50% - 3px)!important;
+		@extend %burger-line;
+	}
+	&:after {
+		content: "";
+		width: 30%;
+		top: calc(50% + 8px);
+		right: 14px;
+		@extend %burger-line;
+		left: auto;
+	}
+	&.close {
+		background-color: rgba(black, 0.05);
+		&:before {
+			width: 54%;
+			top: 26px;
+			transform: rotate(135deg);
+		}
+		span {
+			opacity: 0;
+			left: -60px;
+		}
+		&:after {
+			width: 54%;
+			top: 26px;
+			transform: rotate(-135deg);
 		}
 	}
 }
@@ -225,4 +286,15 @@ section {
 		}
 	}
 }
-
+@include mobile {
+	.navbar-menu {
+		margin: 0 -1rem;
+	}
+	.top-nav {
+		flex-wrap: wrap;
+		li {
+			width: 100%;
+			margin: 1rem;
+		}
+	}
+}
