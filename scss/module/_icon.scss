@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "newmyweb";
+  src:url("../fonts/newmyweb.eot");
+  src:url("../fonts/newmyweb.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/newmyweb.woff") format("woff"),
+    url("../fonts/newmyweb.ttf") format("truetype"),
+    url("../fonts/newmyweb.svg#newmyweb") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "newmyweb" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "newmyweb" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ios:before {
+  content: "\61";
+}
+.icon-circle-email:before {
+  content: "\62";
+}
+.icon-circle-fasebook:before {
+  content: "\63";
+}
+.icon-circle-phone:before {
+  content: "\64";
+}
+.icon-favorite:before {
+  content: "\6d";
+}
+.icon-video:before {
+  content: "\6e";
+}
+.icon-arrow-left:before {
+  content: "\65";
+}
+.icon-mobile:before {
+  content: "\66";
+}
+.icon-ipad:before {
+  content: "\67";
+}
+.icon-desktop:before {
+  content: "\68";
+}
+.icon-android:before {
+  content: "\69";
+}
+.icon-collections:before {
+  content: "\6a";
+}
+.icon-linkout:before {
+  content: "\6c";
+}
+.icon-zoom-in:before {
+  content: "\6f";
+}
+.icon-arrow-right:before {
+  content: "\6b";
+}
+.icon-dashboard:before {
+  content: "\70";
+}

@@ -1,0 +1,124 @@
+$tab-width: 170px;
+$tabs-height: 48px;
+$tabs-number: 4;
+
+$tab-mobile-width: 100px;
+$tab-mobile-height: 30px;
+
+.tabs {
+	position: relative;
+	display: inline-flex;
+	margin: 0 auto 20px;
+	background-color: rgba($secondary,0.2);
+	border-radius: ($tabs-height/2);
+	max-height: $tabs-height;
+	font-family: $Comfortaa;
+	z-index: 0;
+	.tab {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		color: $secondary;
+		width: $tab-width;
+		height: $tabs-height;
+		padding: $column-gap;
+		border-radius: ($tabs-height/2);
+		transition: color 0.3s ease-in-out;
+		overflow: hidden;
+		white-space: nowrap;
+		z-index: 1;
+		-webkit-transform: translate3d(0,0,0);// ios show zindex
+		@include unselectable;
+		&:hover,
+		&:focus,
+		&:active {
+			outline: 0;
+			color: darken($secondary,10%);
+		}
+		.icon-favorite {
+			
+		}
+	}
+	&:after {
+		@include el-abso;
+		top: 0px;
+		left: 0px;
+		width: $tab-width;
+		height: 100%;
+		background-color: $white;
+		transition: all 0.3s ease-in;
+		border-radius: ($tabs-height/2);
+		@include box-shadow(0px,0px,14px,$secondary,1);
+	}
+}
+
+[name="tab-control"] {
+	display: none;
+}
+
+.tab-content {
+	article {
+		display: none;
+		animation: {
+			name: content;
+			direction: normal;
+			duration: 0.3s;
+			timing-function: ease-in-out;
+			iteration-count: 1;
+		}
+	}
+}
+
+%show-block {
+	display: block;
+}
+%color-primary {
+	color: $primary;
+	cursor: default;
+}
+
+@for $i from 1 through $tabs-number {
+	#tab#{$i}:checked {
+		~ .tab-content >#content#{$i} {
+			@extend %show-block;
+		}
+		~ .tabs >[for="tab#{$i}"] {
+			@extend %color-primary;
+		}
+		~ .tabs:after {
+			transform: translateX(#{$tab-width * ($i - 1)});
+		}
+		@include mobile {
+			~ .tabs:after {
+				transform: translateX(#{$tab-mobile-width * ($i - 1)});
+			}
+		}
+	}
+}
+
+@keyframes content {
+    from {
+      opacity: 0;
+      transform: translateX(5%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+}
+
+@include mobile {
+	.tabs {
+		.tab {
+			width: $tab-mobile-width;
+			height: $tab-mobile-height;
+		}
+		span {
+			display: none;
+		}
+		&:after {
+			width: $tab-mobile-width;
+		}
+	}
+}

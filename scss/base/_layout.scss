@@ -1,0 +1,228 @@
+// 貫穿全頁面的物件
+
+
+mark {
+	background-color: transparent;
+	color: inherit;
+	position: relative;
+	z-index: 1;
+	transition: 0.5s all ease;
+	&:after {
+		@include el-abso;
+		z-index: -1;
+		left: 0;
+		bottom: 0;
+		width: 105%;
+		height: 10px;
+		background-color: $yellow;
+	}
+}
+
+::selection {
+	color: $white;
+	background-color: $secondary;
+}
+
+.wrapper {
+	&:after {
+		content: "";
+		position: fixed;
+		z-index: -2;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		background-image: url(../images/header-bg.jpg);
+		background-size: cover;
+		background-position: center center;
+		background-attachment: fixed;
+		filter: blur(5px);
+	}
+}
+
+.section-border {
+	display: block;
+	position: relative;
+	margin: 0 auto 1rem;
+	width: 166px;
+	background: #B8E986;
+	height: 8px;
+	border-radius: $full-border-radius;
+	&:before, &:after {
+		top: 0;
+		height: inherit;
+		border-radius: $full-border-radius;
+	}
+	&:before {
+		@include el-abso;
+		width: 75px;
+		height: 100%;
+		left: 0;
+		background: $secondary;
+	}
+	&:after {
+		@include el-abso;
+		width: 49px;
+		right: 0;
+		background: $primary;
+	}
+}
+
+section {
+	padding: 40px 0;
+	background-color: $white;
+	margin-top: -2px;
+	@include mobile {
+		padding: $mobile-padding-value 0;
+	}
+}
+
+.section-header {
+	margin: $mobile-padding-value auto 0 auto;
+	text-align: center;
+	.title {
+		margin: 0 auto 0.5rem;
+		font-size: 2.25rem;
+		font-family: $Comfortaa;
+	}
+	.subtitle {
+		color: $text;
+	}
+	.content {
+		color: $text-strong;
+		max-width: 760px;
+		margin: 0 auto;
+		text-align: justify;
+		line-height: 1.5;
+		padding: 1rem;
+		@include desktop {
+			padding: 0;
+			margin: 2.25rem auto;
+		}
+	}
+}
+
+.card {
+	position: relative;
+	max-width: 100%;
+	background-color: $white;
+	border-radius: $card-border-radius;
+	@include box-shadow(0px,8px,12px,$primary,0.2);
+	overflow: hidden;
+}
+
+
+.container {
+	padding: 0 1rem;
+	margin: 0 auto;
+
+	@include desktop {
+		max-width: 1200px;
+	}
+	@include fullhd {
+		max-width: 1440px;
+	}
+}
+
+.my-timeline, .my-skill, .my-portfolio {
+	margin-top: 100px;
+	margin-bottom: 80px;
+	@include mobile {
+		margin-top: 40px;
+		margin-bottom: 0;
+	}
+}
+
+.top-nav {
+	list-style: none;
+	width: 100%;
+	display: flex;
+	justify-content:flex-end;
+	li {
+		display: inline-block;
+		margin: 0 8px;
+		width: 100px;
+		height: 1rem*1.6;
+		text-align: center;
+		overflow: hidden;
+		
+		a {
+			display: block;
+			color: $primary;
+			font-family: $Raleway;
+			font-weight: bold;
+			// padding: 8px 0;
+			line-height: 1.6;
+			transition: 0.3s all ease;
+			span {
+				display: block;
+				height: 1rem*1.6;
+			}
+			mark {
+				display: inline-block;
+				text-align: center;
+				height: 1rem*1.6;
+			}
+			&.is-active {
+				transform: translateY(-26px);
+			}
+		}
+		&:hover {
+			a {
+				transform: translateY(-26px);
+			}
+		}
+	}
+}
+
+.fixed-hide {
+	.navbar {
+		transform: translateY(-100%);
+		visibility: visible;
+	}
+}
+
+.navbar {
+	transition: 0.5s transform ease-in-out;
+	// visibility: hidden;
+	@include tablet {
+		.navbar-brand {
+			align-items: center;
+			img {
+				height: 35px;
+			}
+		}
+	}
+	@include desktop {
+		.navbar-brand {
+			img {
+				height: auto;
+			}
+		}
+	}
+}
+
+.footer {
+	background: $linear-bg;
+	color: $white;
+	font-family: $Comfortaa;
+	padding: 2rem 0;
+	strong {
+		color: inherit;
+	}
+	ul {
+		display: flex;
+		justify-content: center;
+		a {
+			color: $white;
+			font-size: 1.9rem;
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+}
+

@@ -1,0 +1,87 @@
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+@mixin el-abso {
+  position: absolute;
+  content: "";
+}
+
+@mixin block-link {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+}
+
+@mixin border-style($border-width, $border-color) {
+  border: ($border-width) solid ($border-color)
+}
+
+@mixin set-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin ellipsis-1 {
+  white-space: nowrap;
+  text-overflow:ellipsis; 
+  overflow: hidden;
+}
+
+@mixin ellipsis-mul ($text-overflow) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $text-overflow;
+  -webkit-box-orient: vertical;
+}
+
+@mixin box-shadow($x-va, $y-va, $z-va, $color, $alpha) {
+  box-shadow: $x-va $y-va $z-va rgba($color,$alpha);
+}
+
+@mixin unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// breakpoint
+
+@mixin mobile {
+  @media screen and (max-width: $tablet - 1px) {
+    @content
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: $tablet), print {
+    @content
+  }
+}
+@mixin tablet-only {
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    @content
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: $desktop) {
+    @content
+  }
+}
+@mixin fullhd {
+  @media screen and (min-width: $widescreen) {
+    @content
+  }
+}

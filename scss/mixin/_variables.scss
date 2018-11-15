@@ -1,0 +1,70 @@
+// color
+// 
+$primary: #185A9D;
+$secondary: #43CEA2;
+$red: #F2485C;
+$yellow: #F8E71C;
+$gray-74: #4A4A4A;
+$gray-119: #777777;
+$gray-155: #9B9B9B;
+$gray-216: #D8D8D8;
+$gray-244: #F4F4F4;
+$white: #ffffff;
+$white-ter: #F2F2F2;
+
+$grey-darker: $gray-74;
+$grey-dark: $gray-119;
+$grey: #EEEEEE;
+$grey-light: $gray-155;
+$grey-lighter: $gray-216;
+
+// Text colors
+
+$text: $grey-dark;
+$text-strong: $grey-darker;
+
+
+// Link colors
+
+$link: $secondary;
+$link-hover: darken($primary,5%);
+$link-hover-border: $grey-light;
+$link-focus: $grey-darker;
+$link-focus-border: $secondary;
+$link-active: $grey-darker;
+$link-active-border: $grey-dark;
+
+// breakpoint
+
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$widescreen: 1408px;
+
+$column-gap: 1rem;
+
+// font
+
+$family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-lg:   1.25rem;
+$font-size-sm:   .875rem;
+
+$Raleway: 'Raleway', sans-serif;
+$Comfortaa: 'Comfortaa', BlinkMacSystemFont, -apple-system, sans-serif;
+
+
+// bg-linear-gradient
+
+$linear-bg: linear-gradient(180deg, $secondary 0%, $primary 100%); 
+$linear-bg-hover: linear-gradient(135deg, $secondary 0%, $primary 100%); 
+
+// border
+
+$radius: 0px;
+$control-border-width: 1px;
+$card-border-radius: 14px;
+$full-border-radius: 999rem;
+$mobile-padding-value: 1rem;
+
+$navbar-box-shadow-size: 0 2px 13px 0;

@@ -1,0 +1,36 @@
+#border-priamry {
+    rect {
+    	stroke-width: 2px;
+	    fill: transparent;
+	    // stroke: $primary;
+	    // stroke-dasharray: 85 400;
+	    // stroke-dashoffset: 0;
+	    animation: stroke-fill 3s ease forwards;
+    }
+}
+
+#btn-primary {
+	rect {
+    	stroke-width: 6px;
+	    fill: transparent;
+	    transition: 1s all ease;
+	    stroke: $secondary;
+		stroke-dasharray: 0 200;
+		stroke-dashoffset: -220;
+    }
+}
+
+// animation
+// 
+@keyframes stroke-fill {
+	from {
+		stroke-width: 6px;
+		stroke: $secondary;
+		stroke-dasharray: 0 200;
+	}
+	to {
+		stroke-width: 2px;
+		stroke: $primary;
+		stroke-dasharray: 50 0;
+	}
+}
