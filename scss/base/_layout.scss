@@ -206,7 +206,7 @@ section {
 	}
 	@include desktop {
 		.navbar-brand {
-			img {
+			a,img {
 				height: auto;
 			}
 		}

@@ -4445,7 +4445,7 @@ section {
       .navbar .navbar-brand img {
         height: 35px; } }
   @media screen and (min-width: 1024px) {
-    .navbar .navbar-brand img {
+    .navbar .navbar-brand a, .navbar .navbar-brand img {
       height: auto; } }
 
 .navbar-burger:before, .navbar-burger span, .navbar-burger:after {
@@ -4528,6 +4528,138 @@ section {
     .top-nav li {
       width: 100%;
       margin: 1rem; } }
+
+@-webkit-keyframes icon-circle {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5); }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2); }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1); } }
+
+@keyframes icon-circle {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5); }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2); }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1); } }
+
+@-webkit-keyframes card-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    -moz-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    -o-transform: translateX(-100px);
+    transform: translateX(-100px); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    -o-transform: translateX(20px);
+    transform: translateX(20px); }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0); } }
+
+@keyframes card-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    -moz-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    -o-transform: translateX(-100px);
+    transform: translateX(-100px); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    -o-transform: translateX(20px);
+    transform: translateX(20px); }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0); } }
+
+@-webkit-keyframes card-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    -o-transform: translateX(100px);
+    transform: translateX(100px); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    -o-transform: translateX(-20px);
+    transform: translateX(-20px); }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0); } }
+
+@keyframes card-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    -o-transform: translateX(100px);
+    transform: translateX(100px); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    -o-transform: translateX(-20px);
+    transform: translateX(-20px); }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0); } }
 
 .button {
   font-weight: bold;
@@ -5193,7 +5325,8 @@ html.with-featherlight {
     background-color: #185A9D;
     right: 50%;
     top: 1rem;
-    z-index: 0; }
+    z-index: 0;
+    transition: 1s height ease-in; }
   .timeline-block:last-child:after {
     height: 0; }
 
@@ -5347,6 +5480,16 @@ html.with-featherlight {
       z-index: 1; } }
 
 @media screen and (min-width: 768px), print {
+  .timeline-block.move-in-left, .timeline-block.move-in-right {
+    visibility: visible; }
+  .timeline-icon {
+    background-color: #ffffff;
+    width: 104px;
+    height: 104px; }
+  .timeline-block.is-visibility-hidden {
+    visibility: hidden; }
+    .timeline-block.is-visibility-hidden:after {
+      height: 0; }
   .timeline-block.flex-left {
     -webkit-justify-content: flex-end;
     -ms-flex-pack: end;
@@ -5358,10 +5501,86 @@ html.with-featherlight {
     -webkit-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse; }
-  .timeline-icon {
-    background-color: #ffffff;
-    width: 104px;
-    height: 104px; } }
+  .timeline-block.is-move-in {
+    visibility: visible; }
+    .timeline-block.is-move-in:after {
+      height: 120%; }
+    .timeline-block.is-move-in:last-child:after {
+      height: 0; }
+    .timeline-block.is-move-in.flex-left .timeline-icon {
+      -webkit-animation-name: icon-circle;
+      animation-name: icon-circle;
+      -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1; }
+    .timeline-block.is-move-in.flex-left .column.is-5 {
+      -webkit-animation-name: card-left;
+      animation-name: card-left;
+      -webkit-animation-duration: 0.5s;
+      animation-duration: 0.5s;
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1; }
+    .timeline-block.is-move-in.flex-right .timeline-icon {
+      -webkit-animation-name: icon-circle;
+      animation-name: icon-circle;
+      -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1; }
+    .timeline-block.is-move-in.flex-right .column.is-5 {
+      -webkit-animation-name: card-right;
+      animation-name: card-right;
+      -webkit-animation-duration: 0.5s;
+      animation-duration: 0.5s;
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1; }
+  .timeline-block.move-in-left:after, .timeline-block.move-in-right:after {
+    height: 120%; }
+  .timeline-block.move-in-left .timeline-icon {
+    -webkit-animation-name: icon-circle;
+    animation-name: icon-circle;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1; }
+  .timeline-block.move-in-left .column.is-5 {
+    -webkit-animation-name: card-left;
+    animation-name: card-left;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1; }
+  .timeline-block.move-in-right .timeline-icon {
+    -webkit-animation-name: icon-circle;
+    animation-name: icon-circle;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1; }
+  .timeline-block.move-in-right .column.is-5 {
+    -webkit-animation-name: card-right;
+    animation-name: card-right;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1; } }
 
 @media screen and (min-width: 1024px) {
   .company-header {

@@ -58,6 +58,15 @@
   user-select: none;
 }
 
+@mixin show-animation($ani-name,$anitime,$easing) {
+  animation: {
+    name: $ani-name;
+    duration: $anitime;
+    timing-function: $easing;
+    iteration-count: 1;
+  }
+}
+
 // breakpoint
 
 @mixin mobile {

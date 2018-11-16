@@ -17,6 +17,7 @@
 		right: 50%;
 		top: $mobile-padding-value;
 		z-index: 0;
+		transition: 1s height ease-in;
 	}
 	&:last-child {
 		&:after {
@@ -177,9 +178,25 @@
 	}
 }
 
+
 // tablet up  style
 @include tablet {
+	%show-visible {
+		visibility: visible;
+	}
+	.timeline-icon {
+		background-color: $white;
+		width: 104px;
+		height: 104px;
+	}
+	// timeline-animation
 	.timeline-block {
+		&.is-visibility-hidden{
+			visibility: hidden;
+			&:after {
+				height: 0;
+			}
+		}
 		&.flex-left {
 			justify-content: flex-end;
 		}
@@ -187,11 +204,56 @@
 			justify-content: flex-end;
 			flex-direction: row-reverse;
 		}
-	}
-	.timeline-icon {
-		background-color: $white;
-		width: 104px;
-		height: 104px;
+		&.is-move-in {
+			visibility: visible;
+			&:after {
+				height: 120%;
+			}
+			&:last-child {
+				&:after {
+					height: 0;
+				}
+			}
+			&.flex-left {
+				.timeline-icon {
+					@include show-animation(icon-circle,0.3s,ease-in-out);
+				}
+				.column.is-5 {
+					@include show-animation(card-left,0.5s,ease-in);
+				}
+			}
+			&.flex-right {
+				.timeline-icon {
+					@include show-animation(icon-circle,0.3s,ease-in-out);
+				}
+				.column.is-5 {
+					@include show-animation(card-right,0.5s,ease-in);
+				}
+			}
+		}
+		&.move-in-left, &.move-in-right {
+			&:after {
+				height: 120%;
+			}
+		}
+		&.move-in-left {
+			@extend %show-visible;
+			.timeline-icon {
+				@include show-animation(icon-circle,0.3s,ease-in-out);
+			}
+			.column.is-5 {
+				@include show-animation(card-left,0.5s,ease-in);
+			}
+		}
+		&.move-in-right {
+			@extend %show-visible;
+			.timeline-icon {
+				@include show-animation(icon-circle,0.3s,ease-in-out);
+			}
+			.column.is-5 {
+				@include show-animation(card-right,0.5s,ease-in);
+			}
+		}
 	}
 }
 
