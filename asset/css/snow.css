@@ -719,7 +719,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   font-weight: 400 !important; }
 
 .has-text-weight-semibold {
-  font-weight: 600 !important; }
+  font-weight: bold !important; }
 
 .has-text-weight-bold {
   font-weight: 700 !important; }
@@ -2607,7 +2607,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
 .title {
   color: #4A4A4A;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: bold;
   line-height: 1.125; }
   .title strong {
     color: inherit;
@@ -2638,7 +2638,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   line-height: 1.25; }
   .subtitle strong {
     color: #4A4A4A;
-    font-weight: 600; }
+    font-weight: bold; }
   .subtitle:not(.is-spaced) + .title {
     margin-top: -1.25rem; }
   .subtitle.is-1 {
@@ -5362,7 +5362,6 @@ html.with-featherlight {
     margin-bottom: 1rem; }
     .timeline-content .list-item .content-text {
       font-weight: normal;
-      font-size: 0.8rem;
       color: #4A4A4A; }
   .timeline-content .list-start {
     margin-right: 1rem;
