@@ -5280,7 +5280,10 @@ html.with-featherlight {
       z-index: 5;
       top: 0;
       left: 1rem;
-      right: 1rem; }
+      right: 1rem;
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap; }
       .info-card .top-nav {
         display: none; }
       .info-card .info-content {

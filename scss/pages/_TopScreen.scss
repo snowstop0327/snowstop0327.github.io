@@ -167,6 +167,7 @@ $top-card-padding: 20px;
 		top: 0;
 		left: $mobile-padding-value;
 		right: $mobile-padding-value;
+		flex-wrap: nowrap;
 		// bottom: $mobile-padding-value;
 		.top-nav {
 			display: none;
